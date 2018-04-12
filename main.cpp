@@ -72,15 +72,14 @@ int main()
         return 0;
 }
 
-void printScoreboard( vector < vector<int> > grid )
+void printScoreboard(vector < vector<int> > grid)
 {
-        cout<<"SCOREBOARD\n"<<endl;
-        for( int r=0; r<grid.size(); r++)
+        cout<<"SCOREBOARD\n";
+        for(int r=0; r<grid.size(); r++)
         {
-                cout<< "Player " << r + 1<<": ";
-                for ( int c=0; c < grid[r].size();c++)
+                cout<< "Player " <<r+1<<": ";
+                for ( int c=0; c<grid[r].size();c++)
                 {
-                        grid[r][c] = 0;
                         cout<< grid[r][c] << "|";
                 }
                 cout << endl;
@@ -96,7 +95,7 @@ int randomBetween(int first, int second)
                 return second + rand()%(first-second+1);
         }
 
-        else if ( second > first)
+        else
         {
                 return first + rand()%(second-first+1);
         }
