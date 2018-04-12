@@ -44,7 +44,7 @@ int main()
                 }
                 for ( int r=0; r<board.size(); r++)
                 {
-                for(int c=0; c < board[r].size(); c++)
+                for(int c=0; c<board[r].size(); c++)
                         {
                                 board[r][c]=0;
                         }
@@ -72,7 +72,7 @@ int main()
 
 int randomBetween(int first, int second)
 {
-        if(first > second)
+        if(first>second)
         {
                 return second + rand()%(first-second+1);
         }
@@ -82,15 +82,15 @@ int randomBetween(int first, int second)
                 return first + rand()%(second-first+1);
         }
 }
-void printScoreboard(vector < vector<int> > grid)
+void printScoreboard(vector< vector<int> > grid)
 {
         cout<<"SCOREBOARD\n";
         for(int r=0; r<grid.size(); r++)
         {
-                cout<< "Player " <<r+1<<": ";
+                cout<< "Player "<<r+1<<": ";
                 for ( int c=0; c<grid[r].size();c++)
                 {
-                        cout<< grid[r][c] << "|";
+                        cout<< grid[r][c] <<"|";
                 }
                 cout << endl;
                 //traverse grid and print out each row as a player's score and 
