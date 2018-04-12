@@ -18,7 +18,6 @@ int randomBetween(int,int);
 int main()
 {
         srand((int) time(0));
-
         int periods;
         int teams;
         vector <vector<int> >board;
@@ -37,10 +36,9 @@ int main()
         }
         else
         {
-              //  cout<<"SCOREBOARD\n";
                 board.resize(teams);
                 //make scoreboard and fill it with zeros
-                for ( int r=0; r<board.size(); r++)
+                for ( int r=0; r<board.size();r++)
                 {
                         board[r].resize(periods);
                 }
@@ -63,7 +61,7 @@ int main()
         {
                 for(int c=0; c<board.size(); c++)
                 {
-                        board[r][c] = randomBetween(5,5);
+                        board[r][c]=randomBetween(5,5);
                 }
         }
 
@@ -72,6 +70,18 @@ int main()
         return 0;
 }
 
+int randomBetween(int first, int second)
+{
+        if(first > second)
+        {
+                return second + rand()%(first-second+1);
+        }
+
+        else
+        {
+                return first + rand()%(second-first+1);
+        }
+}
 void printScoreboard(vector < vector<int> > grid)
 {
         cout<<"SCOREBOARD\n";
@@ -85,18 +95,5 @@ void printScoreboard(vector < vector<int> > grid)
                 cout << endl;
                 //traverse grid and print out each row as a player's score and 
                 // each column as the score for that scoring period
-        }
-}
-
-int randomBetween(int first, int second)
-{
-        if(first > second)
-        {
-                return second + rand()%(first-second+1);
-        }
-
-        else
-        {
-                return first + rand()%(second-first+1);
         }
 }
