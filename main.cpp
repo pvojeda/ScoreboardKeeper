@@ -43,6 +43,11 @@ int main()
    for ( int r=0; r < board.size(); r++)
    {
    board[r].resize( periods );
+
+   for(int c=0; c < board[r].size(); c++)
+   {
+   board[r][c]=0;
+   }
    }
    
   }
@@ -63,9 +68,9 @@ printScoreboard(board);
   return 0;
 }
 
-void printScoreboardvector( vector < vector<int> > grid )
+void printScoreboard( vector < vector<int> > grid )
 {
-cout<<"SCOREBOARD\n";
+cout<<"SCOREBOARD\n"<<endl;
 for( int r=0; r<grid.size(); r++)
 {
     cout<< "Player " << r + 1<<": ";
