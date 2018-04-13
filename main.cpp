@@ -37,12 +37,11 @@ int main()
         else
         {
                 board.resize(teams);
-                //make scoreboard and fill it with zeros
-                for ( int r=0; r<board.size();r++)
+                for(int r=0; r<board.size();r++)
                 {
                         board[r].resize(periods);
                 }
-                for ( int r=0; r<board.size(); r++)
+                for (int r=0; r<board.size(); r++)
                 {
                 for(int c=0; c<board[r].size(); c++)
                         {
@@ -50,8 +49,7 @@ int main()
                         }
                 }
 
-        }
-        //once created, display the scoreboard
+        
 
         printScoreboard(board);
         
@@ -59,14 +57,14 @@ int main()
 
         for (int r=0; r<board.size(); r++)
         {
-                for(int c=0; c<board.size(); c++)
+                for(int c=0; c<board[r].size(); c++)
                 {
                         board[r][c]=randomBetween(5,5);
                 }
         }
 
         printScoreboard(board);
-
+}
         return 0;
 }
 
@@ -87,12 +85,12 @@ void printScoreboard(vector< vector<int> > grid)
         cout<<"SCOREBOARD\n";
         for(int r=0; r<grid.size(); r++)
         {
-                cout<< "Player "<<r+1<<": ";
-                for ( int c=0; c<grid[r].size();c++)
+                cout<<"Player "<<r+1<<": ";
+                for (int c=0; c<grid[r].size();c++)
                 {
-                        cout<< grid[r][c] <<"|";
+                        cout<<grid[r][c] <<"|";
                 }
-                cout << endl;
+                cout<<endl;
                 //traverse grid and print out each row as a player's score and 
                 // each column as the score for that scoring period
         }
